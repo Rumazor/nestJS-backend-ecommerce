@@ -43,4 +43,9 @@ export class CreateProductDto {
   @IsString({ each: true })
   @IsOptional()
   tags: string[];
+
+  @IsString({ each: true, message: 'Each image url must be a string' })
+  @IsOptional()
+  @IsArray()
+  images?: string[];
 }
