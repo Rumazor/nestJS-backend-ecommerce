@@ -54,10 +54,10 @@ export class AuthService {
 
     // Validar credenciales
     if (!user) {
-      throw new UnauthorizedException('Invalid credentials (email)');
+      throw new UnauthorizedException('Invalid credentials');
     }
     if (!bcrypt.compareSync(password, user.password)) {
-      throw new UnauthorizedException('Invalid credentials (password)');
+      throw new UnauthorizedException('Invalid credentials');
     }
     return user;
 
